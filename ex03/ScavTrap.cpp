@@ -4,16 +4,22 @@
 #include <iostream>
 #include <string>
 
-ScavTrap::ScavTrap() : ClapTrap(100, 50, 20)
+ScavTrap::ScavTrap()
 {
 	this->name_ = "ScavTrap";
+	this->hit_points_ = ScavTrap::default_hit_points_;
+	this->energy_points_ = ScavTrap::default_energy_points_;
+	this->attack_damage_ = ScavTrap::default_attack_damage_;
 	this->guardMode_ = false;
 	std::cout << "Scav - " << this->name_ << " has been created !!!" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string& name) : ClapTrap(100, 50, 20)
+ScavTrap::ScavTrap(const std::string& name)
 {
 	this->name_ = name;
+	this->hit_points_ = ScavTrap::default_hit_points_;
+	this->energy_points_ = ScavTrap::default_energy_points_;
+	this->attack_damage_ = ScavTrap::default_attack_damage_;
 	this->guardMode_ = false;
 	std::cout << "Scav - " << this->name_ << " has been created !!!" << std::endl;
 }
@@ -23,9 +29,12 @@ ScavTrap::~ScavTrap()
 	std::cout << "Scav - " << this->name_ << " has been destroyed...." << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& source) : ClapTrap(source.hit_points_, source.energy_points_, source.attack_damage_)
+ScavTrap::ScavTrap(const ScavTrap& source)
 {
 	this->name_ = source.name_;
+	this->hit_points_ = source.hit_points_;
+	this->energy_points_ = source.energy_points_;
+	this->attack_damage_ = source.attack_damage_;
 	this->guardMode_ = false;
 	std::cout << "Scav - " << this->name_ << " has been copy-created !!!" << std::endl;
 }

@@ -32,6 +32,9 @@ ScavTrap::~ScavTrap()
 ScavTrap::ScavTrap(const ScavTrap& source)
 {
 	this->name_ = source.name_;
+	this->hit_points_ = source.hit_points_;
+	this->energy_points_ = source.energy_points_;
+	this->attack_damage_ = source.attack_damage_;
 	this->guardMode_ = false;
 	std::cout << "Scav - " << this->name_ << " has been copy-created !!!" << std::endl;
 }

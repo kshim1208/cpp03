@@ -7,6 +7,10 @@
 
 class FragTrap : virtual public ClapTrap
 {
+	private:
+		const static unsigned int	default_hit_points_ = 100;
+		const static unsigned int	default_energy_points_ = 100;
+		const static unsigned int	default_attack_damage_ = 30;	
 	public:
 		FragTrap();
 		FragTrap(const std::string& name);

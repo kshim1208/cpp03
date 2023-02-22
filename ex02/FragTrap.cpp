@@ -4,15 +4,21 @@
 #include <iostream>
 #include <string>
 
-FragTrap::FragTrap() : ClapTrap(100, 100, 30)
+FragTrap::FragTrap()
 {
 	this->name_ = "FragTrap";
+	this->hit_points_ = FragTrap::default_hit_points_;
+	this->energy_points_ = FragTrap::default_energy_points_;
+	this->attack_damage_ = FragTrap::default_attack_damage_;
 	std::cout << "Frag - " << this->name_ << " has been created !!!" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string& name) : ClapTrap(100, 100, 30)
+FragTrap::FragTrap(const std::string& name)
 {
 	this->name_ = name;
+	this->hit_points_ = FragTrap::default_hit_points_;
+	this->energy_points_ = FragTrap::default_energy_points_;
+	this->attack_damage_ = FragTrap::default_attack_damage_;
 	std::cout << "Frag - " << this->name_ << " has been created !!!" << std::endl;
 }
 
@@ -21,9 +27,12 @@ FragTrap::~FragTrap()
 	std::cout << "Frag - " << this->name_ << " has been destroyed...." << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& source) : ClapTrap(source.hit_points_, source.energy_points_, source.attack_damage_)
+FragTrap::FragTrap(const FragTrap& source)
 {
 	this->name_ = source.name_;
+	this->hit_points_ = source.hit_points_;
+	this->energy_points_ = source.energy_points_;
+	this->attack_damage_ = source.attack_damage_;
 	std::cout << "Frag - " << this->name_ << " has been copy-created !!!" << std::endl;
 }
 

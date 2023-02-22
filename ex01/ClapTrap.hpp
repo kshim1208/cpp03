@@ -10,11 +10,14 @@ class ClapTrap
 		unsigned int 	hit_points_;
 		unsigned int 	energy_points_;
 		unsigned int 	attack_damage_;
-
+		
+	private:
+		const static unsigned int	default_hit_points_ = 10;
+		const static unsigned int	default_energy_points_ = 10;
+		const static unsigned int	default_attack_damage_ = 0;	
 	public:
 		ClapTrap();
 		ClapTrap(const std::string& name);
-		ClapTrap(unsigned int hit_points, unsigned int energy_points, unsigned int attack_damage);
 		virtual ~ClapTrap();
 		ClapTrap(const ClapTrap& source);
 		ClapTrap& operator=(const ClapTrap& source);

@@ -7,8 +7,12 @@
 
 class ScavTrap : virtual public ClapTrap
 {
-	protected:
+	private:
 		bool	guardMode_;
+		const static unsigned int	default_hit_points_ = 100;
+		const static unsigned int	default_energy_points_ = 50;
+		const static unsigned int	default_attack_damage_ = 20;
+
 	public:
 		ScavTrap();
 		ScavTrap(const std::string& name);
