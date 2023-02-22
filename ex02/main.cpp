@@ -1,11 +1,12 @@
 
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 #include <iostream>
 
 int main()
 {
-	ClapTrap Foo("Foo");
+	FragTrap Foo("Foo");
 	ClapTrap Boo("Boo");
 
 	std::cout << "----------------------------" << std::endl;
@@ -29,6 +30,7 @@ int main()
 	std::cout << "----------------------------" << std::endl;
 
 	Foo.attack(Boo.getName());
+	Foo.highFivesGuys();
 
 	std::cout << "----------------------------" << std::endl;
 }

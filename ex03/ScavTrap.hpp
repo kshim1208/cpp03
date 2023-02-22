@@ -5,14 +5,14 @@
 
 # include <string>
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
-	private:
+	protected:
 		bool	guardMode_;
 	public:
 		ScavTrap();
 		ScavTrap(const std::string& name);
-		~ScavTrap();
+		virtual ~ScavTrap();
 		ScavTrap(const ScavTrap& source);
 		ScavTrap& operator=(const ScavTrap& source);
 		void	attack(const std::string& target);
