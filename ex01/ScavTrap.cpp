@@ -49,7 +49,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& source)
 void	ScavTrap::attack(const std::string& target)
 {
 	std::cout << "Scav - " << this->name_ << " is trying to attack...." << std::endl;
-	if (this->useEnergy(5) == false)
+	if (this->checkHitPoints() == false || this->useEnergy(5) == false)
 		return ;
 	std::cout << "Scav - " << this->name_ << " attacked " << target << " !!! " << std::endl;
 }
@@ -65,12 +65,12 @@ void	ScavTrap::guardGate()
 	if (this->guardMode_ == true)
 	{
 		std::cout << "Scav - " << this->name_ << " is already in Guardian Mode !!!"  <<  std::endl;
-		if (this->useEnergy(1) == false)
+		if (this->checkHitPoints() == false || this->useEnergy(1) == false)
 			return ;
 		std::cout << "Scav - " << this->name_ << " ends its Guardian Mode !!!"  <<  std::endl;
 		this->guardMode_ = false;
 	}
-	if (this->useEnergy(10) == false)
+	if (this->checkHitPoints() == false || this->useEnergy(10) == false)
 		return ;
 	else
 	{

@@ -1,17 +1,16 @@
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 #include <iostream>
 
 int main()
 {
-	ClapTrap Boo("Boo");
-	ScavTrap Foo("Foo");
+	DiamondTrap Boo("Boo");
+	DiamondTrap Foo("Foo");
 
+	Boo.announceAttribute();
+	Foo.announceAttribute();
 	std::cout << "----------------------------" << std::endl;
-
-	// Foo.ScavTrap::attack(Boo.getName()); // ???
 
 	Foo.attack(Boo.getName());
 	Boo.takeDamage(Foo.getAttackDamage());
@@ -37,4 +36,8 @@ int main()
 
 	std::cout << "----------------------------" << std::endl;
 
+	Boo.whoAmI();
+	Foo.whoAmI();
+
+	std::cout << "----------------------------" << std::endl;
 }

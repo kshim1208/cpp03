@@ -49,7 +49,7 @@ FragTrap& FragTrap::operator=(const FragTrap& source)
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "Frag - " << this->name_ << " is trying to do HighFives...." << std::endl;
-	if (this->useEnergy(20) == false)
+	if (this->checkHitPoints() == false || this->useEnergy(20) == false)
 		return ;
 	std::cout << "Frag - IT'S HIGHFIVETIMES BY " << this->name_ << " BROOOOOOOOOS!!!!!" << std::endl;
 }

@@ -8,6 +8,8 @@ int main()
 	ClapTrap Foo("Foo");
 	ClapTrap Boo("Boo");
 
+	Boo.announceAttribute();
+	Foo.announceAttribute();
 	std::cout << "----------------------------" << std::endl;
 
 	Foo.attack(Boo.getName());

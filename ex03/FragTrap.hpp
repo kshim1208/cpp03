@@ -7,7 +7,7 @@
 
 class FragTrap : virtual public ClapTrap
 {
-	private:
+	protected:
 		const static unsigned int	default_hit_points_ = 100;
 		const static unsigned int	default_energy_points_ = 100;
 		const static unsigned int	default_attack_damage_ = 30;	
@@ -16,7 +16,7 @@ class FragTrap : virtual public ClapTrap
 		FragTrap(const std::string& name);
 		virtual ~FragTrap();
 		FragTrap(const FragTrap& source);
-		FragTrap& operator=(const FragTrap& source);
+		virtual FragTrap& operator=(const FragTrap& source);
 		void highFivesGuys(void);
 };
 

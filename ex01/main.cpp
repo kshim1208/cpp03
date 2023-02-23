@@ -9,6 +9,8 @@ int main()
 	ClapTrap Boo("Boo");
 	ScavTrap Foo("Foo");
 
+	Boo.announceAttribute();
+	Foo.announceAttribute();
 	std::cout << "----------------------------" << std::endl;
 
 	Foo.attack(Boo.getName());

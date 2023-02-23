@@ -20,11 +20,13 @@ class ClapTrap
 		ClapTrap(const ClapTrap& source);
 		ClapTrap& operator=(const ClapTrap& source);
 		void	attack(const std::string& target);
+		void	announceAttribute(void) const;
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 		std::string	getName(void) const;
 		unsigned int	getAttackDamage(void) const;
 		bool	useEnergy(unsigned int amount);
+		bool	checkHitPoints() const;
 };
 
 #endif

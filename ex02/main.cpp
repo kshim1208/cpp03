@@ -9,14 +9,21 @@ int main()
 	FragTrap Foo("Foo");
 	ClapTrap Boo("Boo");
 
+	Boo.announceAttribute();
+	Foo.announceAttribute();
 	std::cout << "----------------------------" << std::endl;
 
 	Foo.attack(Boo.getName());
 	Boo.takeDamage(Foo.getAttackDamage());
 	Foo.attack(Boo.getName());
+	Boo.takeDamage(Foo.getAttackDamage());
 	Foo.attack(Boo.getName());
+	Boo.takeDamage(Foo.getAttackDamage());
 	Foo.attack(Boo.getName());
+	Boo.takeDamage(Foo.getAttackDamage());
 	Foo.attack(Boo.getName());
+	Boo.takeDamage(Foo.getAttackDamage());
+	Boo.beRepaired(5);
 
 	std::cout << "----------------------------" << std::endl;
 

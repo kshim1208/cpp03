@@ -1,10 +1,10 @@
 NAME = Now_its_weird!
 CPPC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -Wshadow -std=c++98
 RM = rm
 RMFLAGS = -f
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp DiamondTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

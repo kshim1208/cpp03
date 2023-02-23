@@ -46,10 +46,15 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& source)
 	return (*this);
 }
 
+void	ClapTrap::announceAttribute() const
+{
+	std::cout << "Clap - attribute of " << this->name_ << " = hp : " << this->hit_points_ << ", ep : " << this->energy_points_ << ", ad : " << this->attack_damage_ << std::endl;
+}
+
 void	ClapTrap::attack(const std::string& target)
 {
 	std::cout << "Clap - " << this->name_ << " is trying to attack...." << std::endl;
-	if (this->useEnergy(1) == false)
+	if (this->checkHitPoints() == false || this->useEnergy(1) == false)
 		return ;
 	std::cout << "Clap - " << this->name_ << " attacked " << target << " !!! " << std::endl;
 }
@@ -64,13 +69,13 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	{
 		this->hit_points_ -= amount;
 	}
-	std::cout << "Clap - " << this->name_ << " have taken " << amount << " Damage !!" << std::endl;
+	std::cout << "Clap - " << this->name_ << " have taken " << amount << " Damage !! ( " << this->hit_points_ << " left)" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "Clap - " << this->name_ << " is trying to repairing...." << std::endl;
-	if (this->useEnergy(1) == false)
+	if (this->checkHitPoints() == false || this->useEnergy(amount) == false)
 		return ;
 	this->hit_points_ += amount;
 	std::cout << "Clap - " << this->name_ << " repaired itself for " << amount << " !! (currently " << this->hit_points_ << " hitpoints left)" << std::endl;
@@ -96,4 +101,15 @@ bool	ClapTrap::useEnergy(unsigned int amount)
 	this->energy_points_ -= amount;
 	std::cout << "Clap - " << this->name_ << " used " << amount << " Energy!! (" << this->energy_points_ << " left)" << std::endl;
 	return true;
+}
+
+bool	ClapTrap::checkHitPoints() const
+{
+	if (this->hit_points_ == 0)
+	{
+		std::cout << "Clap - " << this->name_ << " can't do that !! it has " << this->hit_points_ << " hit points left !!" << std::endl;
+		return (false);
+	}
+	else
+		return (true);
 }
