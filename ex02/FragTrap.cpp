@@ -7,7 +7,7 @@
 FragTrap::FragTrap()
 {
 	this->name_ = "FragTrap";
-	this->hit_points_ = FragTrap::default_hit_points_;
+	this->hit_points_ = ClapTrap::default_hit_points_;
 	this->energy_points_ = FragTrap::default_energy_points_;
 	this->attack_damage_ = FragTrap::default_attack_damage_;
 	std::cout << "Frag - " << this->name_ << " has been created !!!" << std::endl;
@@ -16,7 +16,7 @@ FragTrap::FragTrap()
 FragTrap::FragTrap(const std::string& name)
 {
 	this->name_ = name;
-	this->hit_points_ = FragTrap::default_hit_points_;
+	this->hit_points_ = ClapTrap::default_hit_points_;
 	this->energy_points_ = FragTrap::default_energy_points_;
 	this->attack_damage_ = FragTrap::default_attack_damage_;
 	std::cout << "Frag - " << this->name_ << " has been created !!!" << std::endl;

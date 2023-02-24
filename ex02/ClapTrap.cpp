@@ -56,7 +56,7 @@ void	ClapTrap::attack(const std::string& target)
 	std::cout << "Clap - " << this->name_ << " is trying to attack...." << std::endl;
 	if (this->checkHitPoints() == false || this->useEnergy(1) == false)
 		return ;
-	std::cout << "Clap - " << this->name_ << " attacked " << target << " !!! " << std::endl;
+	std::cout << "Clap - " << this->name_ << " attacked " << target << ", causing " << this->attack_damage_ << " points of damage !!! " << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)

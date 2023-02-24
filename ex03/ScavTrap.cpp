@@ -54,7 +54,7 @@ void	ScavTrap::attack(const std::string& target)
 	std::cout << "Scav - " << this->name_ << " is trying to attack...." << std::endl;
 	if (this->useEnergy(5) == false)
 		return ;
-	std::cout << "Scav - " << this->name_ << " attacked " << target << " !!! " << std::endl;
+	std::cout << "Scav - " << this->name_ << " attacked " << target << ", causing " << this->attack_damage_ << " points of damage !!! " << std::endl;
 }
 
 bool	ScavTrap::getGuardState() const
@@ -64,13 +64,13 @@ bool	ScavTrap::getGuardState() const
 
 void	ScavTrap::guardGate()
 {
-	std::cout << "Scav - " << this->name_ << " is trying to activate Guardian Mode......"  <<  std::endl;
-	if (this->guardMode_ == true)
+	std::cout << "Scav - " << this->name_ << " is trying to activate Gate keeper Mode......"  <<  std::endl;
+	if (this->getGuardState() == true)
 	{
-		std::cout << "Scav - " << this->name_ << " is already in Guardian Mode !!!"  <<  std::endl;
+		std::cout << "Scav - " << this->name_ << " is already in Gate keeper Mode !!!"  <<  std::endl;
 		if (this->checkHitPoints() == false || this->useEnergy(1) == false)
 			return ;
-		std::cout << "Scav - " << this->name_ << " ends its Guardian Mode !!!"  <<  std::endl;
+		std::cout << "Scav - " << this->name_ << " ends its Gate keeper Mode !!!"  <<  std::endl;
 		this->guardMode_ = false;
 	}
 	if (this->checkHitPoints() == false || this->useEnergy(10) == false)
@@ -78,6 +78,6 @@ void	ScavTrap::guardGate()
 	else
 	{
 		this->guardMode_ = true;
-		std::cout << "Scav - " << this->name_ << " in Guardian Mode !!!"  <<  std::endl;
+		std::cout << "Scav - " << this->name_ << " in Gate keeper Mode !!!"  <<  std::endl;
 	}
 }

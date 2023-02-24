@@ -52,8 +52,8 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& source)
 
 void	DiamondTrap::whoAmI()
 {
+	std::cout << "Diamond - " << this->name_ << " IS TRYING TO GET IN PERSONALITY CRISIS!!!!" << std::endl;
 	if (this->checkHitPoints() == false || this->useEnergy(this->energy_points_) == false)
 		return ;
-	std::cout << "Diamond - " << this->name_ << " IS IN PERSONALITY CRISIS!!!!" << std::endl;
 	std::cout << "Diamond - MY NAME IS..... <" << this->name_ << ">..... AND CLAPTAP'S NAME IS...... <" << this->ClapTrap::name_ << ">.....!!!!! " << std::endl;
 }
