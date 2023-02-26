@@ -7,7 +7,7 @@
 ScavTrap::ScavTrap()
 {
 	this->name_ = "ScavTrap";
-	this->hit_points_ = ClapTrap::default_hit_points_;
+	this->hit_points_ = ScavTrap::default_hit_points_;
 	this->energy_points_ = ScavTrap::default_energy_points_;
 	this->attack_damage_ = ScavTrap::default_attack_damage_;
 	this->guardMode_ = false;
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap()
 ScavTrap::ScavTrap(const std::string& name)
 {
 	this->name_ = name;
-	this->hit_points_ = ClapTrap::default_hit_points_;
+	this->hit_points_ = ScavTrap::default_hit_points_;
 	this->energy_points_ = ScavTrap::default_energy_points_;
 	this->attack_damage_ = ScavTrap::default_attack_damage_;
 	this->guardMode_ = false;
