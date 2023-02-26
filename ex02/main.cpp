@@ -1,18 +1,22 @@
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 #include <iostream>
 
 int main()
 {
 	FragTrap Foo("Foo");
-	ClapTrap Boo("Boo");
+	ScavTrap Boo("Boo");
 
 	Boo.announceAttribute();
 	Foo.announceAttribute();
 	std::cout << "----------------------------" << std::endl;
 
+	Boo.attack(Foo.getName());
+	Foo.takeDamage(Boo.getAttackDamage());
+	Boo.guardGate();
 	Foo.attack(Boo.getName());
 	Boo.takeDamage(Foo.getAttackDamage());
 	Foo.attack(Boo.getName());
@@ -38,6 +42,6 @@ int main()
 
 	Foo.attack(Boo.getName());
 	Foo.highFivesGuys();
-
+	Foo.highFivesGuys();
 	std::cout << "----------------------------" << std::endl;
 }

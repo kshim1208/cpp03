@@ -69,6 +69,7 @@ void	ScavTrap::guardGate()
 			return ;
 		std::cout << "Scav - " << this->name_ << " ends its Gate keeper Mode !!!"  <<  std::endl;
 		this->guardMode_ = false;
+		return ;
 	}
 	if (this->checkHitPoints() == false || this->useEnergy(10) == false)
 		return ;

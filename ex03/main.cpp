@@ -33,6 +33,10 @@ int main()
 
 	Foo.guardGate();
 	Foo.guardGate();
+	Boo.guardGate();
+	Boo.guardGate();
+	Foo.highFivesGuys();
+	Boo.highFivesGuys();
 
 	std::cout << "----------------------------" << std::endl;
 
